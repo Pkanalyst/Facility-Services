@@ -39,7 +39,7 @@ update transactionmaster
 set Invoice_DT=Invoice_Date;
 
 
-''EXERCISE	1:	COMPARISON	OPERATOR	QUERIES''
+                                          ''EXERCISE	1:	COMPARISON	OPERATOR	QUERIES''
 
 '1. From	the	TransactionMaster	table,	select	a	list	of	all	items	purchased	for	
 Customer_Number	296053.	Display	the	Customer_Number,Product_Number,	and	Sales_Amount	for	this	customer.'
@@ -66,7 +66,8 @@ select distinct(Product_number) from transactionmaster ;
 
 select distinct(customer_number) from customermaster;
 
-'EXERCISE	2:	AGGREGATE	FUCNTION	QUERIES'
+                                            
+                                            'EXERCISE	2:	AGGREGATE	FUCNTION	QUERIES'
 
 '1. Find	the	average	Sales	Amount	for	Product	Number	30300	in	Sales	Period	
 P03.'
@@ -101,7 +102,7 @@ select product_number,price from pricemaster
 order by (Price) asc
 limit 1;
 
-'EXERCISE	3:	LIKE	FUNCTION	QUERIES'
+                                              'EXERCISE	3:	LIKE	FUNCTION	QUERIES'
 
 '1. Select	all	Employees	where	Employee-Status	=	“A”.'
 
@@ -148,7 +149,7 @@ where (last_name like"%N" AND first_name LIKE "A%") or (last_name like"%N" AND f
 select * from productmaster 
 where product_description like "%maintenance%" ;
 
-'EXERCISE	4:	DATE	FUNCTION	QUERIES'
+                                             'EXERCISE	4:	DATE	FUNCTION	QUERIES'
 
 '1. List	the	employees	who	were	hired	before	01/01/2000	(hint:	use	#	for	date	values).'
 
@@ -177,7 +178,7 @@ where weekDAY(Service_DT) = 2 or weekDAY(Service_DT) = 5
 SELECT * from employee_master
 where Last_Date_Worked ="2024-05-16" ;
 
-'EXERCISE	5:	GROUP	BY	CLAUSE QUERIES'
+                                        'EXERCISE	5:	GROUP	BY	CLAUSE QUERIES'
 
 '1. List	the	number	of	Customers	from	each	City	and State.'
 
@@ -220,7 +221,7 @@ item	in	the	table.	Hint:	The	products will	need	to	be	broken	up	into	separate gr
 select product_number,Max(Sales_Amount),Min(Sales_Amount) from transactionmaster
 group by product_number;
 
-'EXERCISE	6:	ORDER	BY	CLAUSE	QUERIES'
+                                           'EXERCISE	6:	ORDER	BY	CLAUSE	QUERIES'
 
 '1. Select	the	Name	of	customer	companies,	city,	and	state	for	all	customers	in	the	CustomerMaster	table.	
 Display	the	results	in	Ascending	Order	based	on	the	Customer	Name	(company	name).'
@@ -240,7 +241,7 @@ select product_number,sales_amount from transactionmaster
 where sales_amount>100 
 order by (sales_amount) desc ;
 
-'EXERCISE	7:	HAVING	CLAUSE	QUERIES'
+                                            'EXERCISE	7:	HAVING	CLAUSE	QUERIES'
 
 '1. How	many	branches are	in	each	unique	region	in	the	LocationMaster	table	that	has more	than	one	branch in	the	region?	
 Select	the	region and	 display	the	number	of	branches are	in	each	if	it's 'greater	than	1.'
@@ -264,7 +265,7 @@ Select customer_number ,count(invoice_number) as Total_Orders from transactionma
 group by Customer_Number
 having Total_Orders > 1 ;
 
-'EXERCISE	8:	IN	AND	BETWEEN	FUNCTION	QUERIES'
+                                           'EXERCISE	8:	IN	AND	BETWEEN	FUNCTION	QUERIES'
 
 '1. List	all	the	employees	who	have	worked	between	22	March	2004	and	21	April	2004.'
 
@@ -288,7 +289,7 @@ table	for	all	of	the	rows	where	the	Market	value	is	either:	Dallas,	Denver,	Tuls
 select branch_number,Market,Region from locationmaster
 where market in("Dallas","Denver","Tulsa","Canada") ;
 
-'EXERCISE	9:	TABLE	JOINS'
+                                                 'EXERCISE	9:	TABLE	JOINS'
 
 '1. Write	a	query	using	a	join	to	determine	which	products were	ordered	by	each	of	the	customers in	
 the	CustomerMaster table.	Select	the	Customer_Number,	FirstOfCustomer_Name,	FirstOfCity,	Product_Number,	
